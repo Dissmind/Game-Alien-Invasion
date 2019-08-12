@@ -29,9 +29,13 @@ def startGame():
     while True:
 
         # Обработка нажатия клавишь и события мыши
-        gf.checkEvents()
+        gf.checkEvents(ship)
+
+        # Обновление позиции корабля с учетом флага
+        ship.update()
 
         # Обоновляет изображение на экране и отображает новый экран
         gf.updateScreen(aiSetting, screen, ship)
+
 
 startGame()

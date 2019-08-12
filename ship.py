@@ -15,6 +15,19 @@ class Ship():
         self.rect.centerx = self.screenRect.centerx
         self.rect.bottom  = self.screenRect.bottom
 
+        # Флаги перемещения
+        self.moving_right = False
+        self.moving_left  = False
+
+
+    # Обновление позиции корабля с учетом флага
+    def update(self):
+        if self.moving_right:
+            self.rect.centerx += 1
+        if self.moving_left:
+            self.rect.centerx -= 1
+
+
     # Отрисовка корабля
     def blitme(self):
         self.screen.blit(self.image, self.rect)
