@@ -5,6 +5,9 @@ import pygame
 from setting import Setting
 # Импорт класса Корабля
 from ship import Ship
+# Импорт модуля с вспомагательными функциями
+import game_function as gf
+
 
 def startGame():
     # Инициализация настроек игры, создания объект экрана
@@ -24,19 +27,11 @@ def startGame():
 
     # Отслежевание событий клавиатуры и мыши
     while True:
-        for event in pygame.event.get():
-            # Постояные события
 
-            # Отрисовка экрана
-            screen.fill(aiSetting.bgColor)
-            # Вывод корабля
-            ship.blitme()
+        # Обработка нажатия клавишь и события мыши
+        gf.checkEvents()
 
-
-            # Обработка выхода
-            if event.type == pygame.QUIT:
-                sys.exit()
-
-        pygame.display.flip()
+        # Обоновляет изображение на экране и отображает новый экран
+        gf.updateScreen(aiSetting, screen, ship)
 
 startGame()
