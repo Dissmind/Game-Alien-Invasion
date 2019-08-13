@@ -8,3 +8,8 @@ class Setting():
         self.screenWidth   = 1200
         self.screenHieght  = 800
         self.bgColor       = (230, 230, 230)
+
+
+
+        # Скорость полета корабля
+        self.shipSpeed = 1

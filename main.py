@@ -19,7 +19,7 @@ def startGame():
     # Установка заголовка окна
     pygame.display.set_caption('Alien Invasion')
     # Инициализация копрабля
-    ship = Ship(screen)
+    ship = Ship(screen, aiSetting)
 
 
 
